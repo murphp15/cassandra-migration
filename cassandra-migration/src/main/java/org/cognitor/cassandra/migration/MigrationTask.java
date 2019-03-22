@@ -28,7 +28,8 @@ public class MigrationTask {
      * @param database   the database that should be migrated
      * @param repository the repository that contains the migration scripts
      */
-    public MigrationTask(Database database, MigrationRepository repository) {
+    public MigrationTask(Database database,
+                         MigrationRepository repository) {
         this.database = notNull(database, "database");
         this.repository = notNull(repository, "repository");
     }
@@ -36,7 +37,7 @@ public class MigrationTask {
     /**
      * Start the actual migration. Take the version of the database, get all required migrations and execute them or do
      * nothing if the DB is already up to date.
-     *
+     * <p>
      * At the end the underlying database instance is closed.
      *
      * @throws MigrationException if a migration fails
