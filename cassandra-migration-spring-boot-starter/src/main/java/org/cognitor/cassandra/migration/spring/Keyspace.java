@@ -14,19 +14,6 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
-public @interface Table {
-
+public @interface Keyspace {
     String keyspace() default "";
-
-    /**
-     * The name of the table; must be a valid CQL identifier or quoted identifier.
-     */
-    String value() default "";
-
-    /**
-     * Whether to cause the table name to be force-quoted.
-     */
-    boolean forceQuote() default false;
-
-
 }
